@@ -1,12 +1,18 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "../Characters//Bob/Bob.h"
 #include "../TextureHolder/TextureHolder.h"
+#include "../Characters/Thomas/Thomas.h"
 
 class Engine
 {
 private:
 	// The texture holder
 	TextureHolder th;
+
+	// Thomas and bob
+	Thomas m_Thomas;
+	Bob m_Bob;
 
 	const int TILE_SIZE{ 50 };
 	const int VERTS_IN_QUAD{ 4 };
