@@ -26,3 +26,23 @@ Engine::Engine()
 	// Associate our texture with the sprite
 	m_BackgroundSprite.setTexture(m_BackgroundTexture);
 }
+
+void Engine::run()
+{
+	// Timing for everything
+	sf::Clock clock;
+
+	while (m_Window.isOpen())
+	{
+		sf::Time dt{ clock.restart() };
+		// update the total game time
+		m_GameTimeTotal += dt;
+		// Make a decimal fraction from the delta time
+		float dtAsSeconds{ dt.asSeconds() };
+
+		// Call each part of the game loop
+		input();
+		update(dtAsSeconds);
+		draw();
+	}
+}
