@@ -1,4 +1,4 @@
-#include "../TextureHolder/TextureHolder.h"
+#include "../../TextureHolder/TextureHolder.h"
 #include "Thomas.h"
 
 Thomas::Thomas()

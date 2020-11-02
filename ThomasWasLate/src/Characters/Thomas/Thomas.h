@@ -1,5 +1,5 @@
 #pragma once
-#include "../PlayableCharacter/PlayableCharacter.h"
+#include "../../PlayableCharacter/PlayableCharacter.h"
 
 // Inheritance from PlayableCharacter
 class Thomas : public PlayableCharacter
