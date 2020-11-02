@@ -5,7 +5,7 @@
 #include "LevelManager.h"
 #include "../TextureHolder/TextureHolder.h"
 
-int **LevelManager::nextLevel(sf::VertexArray &rVaLevel)
+int** LevelManager::nextLevel(sf::VertexArray& rVaLevel)
 {
 	m_LevelSize.x = 0;
 	m_LevelSize.y = 0;
