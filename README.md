@@ -1,6 +1,6 @@
 A clone based on the game "Thomas was alone"
 
-A quick project to learn some aspects about game development.
+A quick project to learn some aspects about game development while developing my c++ skills.
 
 # How to compile
 
