@@ -3,7 +3,7 @@
 void Engine::draw()
 {
 	// Clear the last frame (so yo don't draw ontop of the previous frame)
-	m_Window.clear();
+	m_Window.clear(sf::Color::White);
 
 	if (!m_SplitScreen)
 	{
