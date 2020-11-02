@@ -5,13 +5,8 @@ void Engine::update(float dtAsSeconds)
 {
 	if (m_NewLevelRequired)
 	{
-		// Spawn Thomas and Bob
-		m_Thomas.spawn(sf::Vector2f(0, 0), GRAVITY);
-		m_Bob.spawn(sf::Vector2f(100, 0), GRAVITY);
-
-		// Make sure our spawn is only called one time
-		m_TimeRemaining = 10;
-		m_NewLevelRequired = false;
+		// Load a new level
+		loadLevel();
 	}
 
 	if (m_Playing)
