@@ -118,3 +118,29 @@ sf::Sprite PlayableCharacter::getSprite()
 {
 	return m_Sprite;
 }
+
+void PlayableCharacter::stopFalling(float position)
+{
+	m_Position.y = position - getPosition().height;
+	m_Sprite.setPosition(m_Position);
+	m_IsFalling = false;
+}
+
+void PlayableCharacter::stopRight(float position)
+{
+	m_Position.x = position - m_Sprite.getGlobalBounds().width;
+	m_Sprite.setPosition(m_Position);
+}
+
+void PlayableCharacter::stopLeft(float position)
+{
+	m_Position.x = position + m_Sprite.getGlobalBounds().width;
+	m_Sprite.setPosition(m_Position);
+}
+
+void PlayableCharacter::stopJump()
+{
+	// stop a jump early
+	m_IsJumping = false;
+	m_IsFalling = true;
+}
