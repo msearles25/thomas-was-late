@@ -148,16 +148,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Characters\Bob\Bob.cpp" />
+    <ClCompile Include="src\PlayableCharacter\PlayableCharacter.cpp" />
     <ClCompile Include="src\Engine\Draw.cpp" />
     <ClCompile Include="src\Engine\Engine.cpp" />
     <ClCompile Include="src\Engine\Input.cpp" />
     <ClCompile Include="src\Engine\Update.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\TextureHolder\TextureHolder.cpp" />
+    <ClCompile Include="src\Characters\Thomas\Thomas.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Characters\Bob\Bob.h" />
+    <ClInclude Include="src\PlayableCharacter\PlayableCharacter.h" />
     <ClInclude Include="src\Engine\Engine.h" />
     <ClInclude Include="src\TextureHolder\TextureHolder.h" />
+    <ClInclude Include="src\Characters\Thomas\Thomas.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

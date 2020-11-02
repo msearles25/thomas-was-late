@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "../Characters//Bob/Bob.h"
+#include "../Characters/Bob/Bob.h"
 #include "../TextureHolder/TextureHolder.h"
 #include "../Characters/Thomas/Thomas.h"
 

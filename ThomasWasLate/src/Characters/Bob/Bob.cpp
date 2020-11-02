@@ -16,7 +16,7 @@ bool Bob::handleInput()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
 		// Start a jump if not already jumping or falling
-		if (!m_IsJumping && m_IsFalling)
+		if (!m_IsJumping && !m_IsFalling)
 		{
 			m_IsJumping = true;
 			m_TimeThisJump = 0;
