@@ -80,3 +80,41 @@ void PlayableCharacter::update(float elapsedTime)
 	// Move the sprite into the appropriate position
 	m_Sprite.setPosition(m_Position);
 }
+
+sf::FloatRect PlayableCharacter::getPosition()
+{
+	return m_Sprite.getGlobalBounds();
+}
+
+sf::Vector2f PlayableCharacter::getCenter()
+{
+	return sf::Vector2f(
+		m_Position.x + m_Sprite.getGlobalBounds().width / 2,
+		m_Position.y + m_Sprite.getGlobalBounds().height / 2
+	);
+}
+
+sf::FloatRect PlayableCharacter::getFeet()
+{
+	return m_Feet;
+}
+
+sf::FloatRect PlayableCharacter::getHead()
+{
+	return m_Head;
+}
+
+sf::FloatRect PlayableCharacter::getRight()
+{
+	return m_Right;
+}
+
+sf::FloatRect PlayableCharacter::getLeft()
+{
+	return m_Left;
+}
+
+sf::Sprite PlayableCharacter::getSprite()
+{
+	return m_Sprite;
+}
