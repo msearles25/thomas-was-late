@@ -32,10 +32,55 @@ SoundManager::SoundManager()
 	m_Fire2Sound.setMinDistance(minDistance);
 	m_Fire3Sound.setMinDistance(minDistance);
 
-	// Loop all of the fire sounds
+	// Loop all of the fire sounds when we call play()
 	m_Fire1Sound.setLoop(true);
 	m_Fire2Sound.setLoop(true);
 	m_Fire3Sound.setLoop(true);
+}
 
+void SoundManager::playFire(sf::Vector2f emitterLocation, sf::Vector2f listenerLocation)
+{
+	// WHere is the Listener?
+	sf::Listener::setPosition(emitterLocation.x, emitterLocation.y, 0.0f);
 
+	switch (m_NextSound)
+	{
+	case 1:
+		// Locate/move the source of the sound
+		m_Fire1Sound.setPosition(emitterLocation.x, emitterLocation.y, 0.0f);
+
+		if (m_Fire1Sound.getStatus() == sf::Sound::Status::Stopped)
+		{
+			// Play the sound if it's not already playing
+			m_Fire1Sound.play();
+		}
+		break;
+	case 2:
+		// Do the exact same
+		m_Fire2Sound.setPosition(emitterLocation.x, emitterLocation.y, 0.0f);
+		
+		if (m_Fire2Sound.getStatus() == sf::Sound::Status::Stopped)
+		{
+			m_Fire2Sound.play();
+		}
+		break;
+	case 3:
+		// Do the same, again
+		m_Fire3Sound.setPosition(emitterLocation.x, emitterLocation.y, 0.0f);
+
+		if (m_Fire1Sound.getStatus() == sf::Sound::Stopped)
+		{
+			m_Fire3Sound.play();
+		}
+		break;
+	}
+
+	// Increment to the next fire sound we need
+	m_NextSound++;
+
+	// Go back to the first sound when the third has stopped
+	if (m_NextSound > 3)
+	{
+		m_NextSound = 1;
+	}
 }
