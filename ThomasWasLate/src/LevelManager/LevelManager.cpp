@@ -122,4 +122,6 @@ int **LevelManager::nextLevel(sf::VertexArray &rVaLevel)
 			currentVertex = currentVertex + VERTS_IN_QUAD;
 		}
 	}
+
+	return arrayLevel;
 }
