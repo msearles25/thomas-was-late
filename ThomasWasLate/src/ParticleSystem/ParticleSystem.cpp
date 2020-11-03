@@ -41,3 +41,17 @@ void ParticleSystem::update(float dt)
 		m_IsRunning = false;
 	}
 }
+
+void ParticleSystem::emitParticles(sf::Vector2f startPosition)
+{
+	m_IsRunning = true;
+	m_Duration = 2;
+
+	int currentVertex{ 0 };
+
+	for (auto it{ m_Particles.begin() }; it != m_Particles.end(); it++)
+	{
+		m_Vertices[currentVertex++].color = sf::Color::Yellow;
+		it->setPosition(startPosition);
+	}
+}
