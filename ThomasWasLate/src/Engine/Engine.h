@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include <SFML/Graphics.hpp>
 #include "../Characters/Bob/Bob.h"
 #include "../LevelManager/LevelManager.h"
@@ -74,6 +75,8 @@ private:
 	// Texture for the level tiles
 	sf::Texture m_tilesTexture;
 
+	std::vector<sf::Vector2f> m_FireEmitters;
+
 	// Private functions for internal use only
 	void input();
 	void update(float dtAsSeconds);
@@ -83,6 +86,9 @@ private:
 	void loadLevel();
 
 	bool detectCollisions(PlayableCharacter& character);
+
+	// Make a vector of the best places to emit sounds from
+	void populateEmitters(std::vector<sf::Vector2f>& vSoundEmitters, int** arrayLevel);
 public:
 	// The engine constructor
 	Engine();
