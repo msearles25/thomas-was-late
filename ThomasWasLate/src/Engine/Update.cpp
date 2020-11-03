@@ -22,7 +22,9 @@ void Engine::update(float dtAsSeconds)
 		{
 			// New level is required, both reached the end
 			m_NewLevelRequired = true;
-			
+
+			// Play the reachedGoal sound
+			m_SM.playReachGoal();
 		}
 		else
 		{
