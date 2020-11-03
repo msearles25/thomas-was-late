@@ -93,4 +93,26 @@ void Engine::update(float dtAsSeconds)
 			m_MainView.setCenter(m_Bob.getCenter());
 		}
 	}
+
+	// Updating the HUD
+	// Increment the number of framse since the last HUD update
+	m_FrameSinceLastHUDUpdate++;
+
+	// Update the HUD every TargetFramesPerHUDUPdate 
+	if (m_FrameSinceLastHUDUpdate > m_TargetFramesPerHUDUpdate)
+	{
+		// Update the game HUD text
+		std::stringstream ssTime;
+		std::stringstream ssLevel;
+
+		// Update the time text
+		ssTime << (int)m_TimeRemaining;
+		m_Hud.setTime(ssTime.str());
+
+		// Update the level text
+		ssLevel << "Level: " << m_LM.getCurrentLevel();
+		m_Hud.setLevel(ssLevel.str());
+
+		m_FrameSinceLastHUDUpdate = 0;
+	}
 }

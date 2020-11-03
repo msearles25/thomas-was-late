@@ -2,6 +2,7 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include "../Characters/Bob/Bob.h"
+#include "../HUD/HUD.h"
 #include "../LevelManager/LevelManager.h"
 #include "../SoundManager/SoundManager.h"
 #include "../TextureHolder/TextureHolder.h"
@@ -22,6 +23,11 @@ private:
 
 	// Create a SoundManager
 	SoundManager m_SM;
+
+	// The HUD
+	HUD m_Hud;
+	int m_FrameSinceLastHUDUpdate{ 0 };
+	int m_TargetFramesPerHUDUpdate{ 500 };
 
 	const int TILE_SIZE{ 50 };
 	const int VERTS_IN_QUAD{ 4 };
