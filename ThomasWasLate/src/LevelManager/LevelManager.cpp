@@ -91,5 +91,24 @@ int **LevelManager::nextLevel(sf::VertexArray &rVaLevel)
 
 	inputFile.close();
 
+	// What kind of primitive are we using?
+	rVaLevel.setPrimitiveType(sf::Quads);
 
+	// Set the size of the vertex array
+	rVaLevel.resize(m_LevelSize.x * m_LevelSize.y * VERTS_IN_QUAD);
+
+	// Start at the beginning of our vertexArray
+	int currentVertex{ 0 };
+
+	for (int x{ 0 }; x < m_LevelSize.x; x++)
+	{
+		for (int y{ 0 }; y < m_LevelSize.y; i++)
+		{
+			// Position each vertex in the current quad
+			rVaLevel[currentVertex + 0].position = sf::Vector2f(x * TILE_SIZE, y * TILE_SIZE);
+			rVaLevel[currentVertex + 1].position = sf::Vector2f((x * TILE_SIZE) + TILE_SIZE, y * TILE_SIZE);
+			rVaLevel[currentVertex + 2].position = sf::Vector2f((x * TILE_SIZE), (y * TILE_SIZE) + TILE_SIZE);
+			rVaLevel[currentVertex + 3].position = sf::Vector2f(x * TILE_SIZE, (y * TILE_SIZE) + TILE_SIZE);
+		}
+	}
 }
