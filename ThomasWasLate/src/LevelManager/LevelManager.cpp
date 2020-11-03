@@ -15,7 +15,7 @@ int** LevelManager::nextLevel(sf::VertexArray& rVaLevel)
 
 	if (m_CurrentLevel > NUM_LEVELS)
 	{
-		m_CurrentLevel = 1;
+		m_CurrentLevel = 0;
 		m_TimeModifier -= .1f;
 	}
 

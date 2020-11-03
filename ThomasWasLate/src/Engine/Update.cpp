@@ -30,6 +30,16 @@ void Engine::update(float dtAsSeconds)
 			detectCollisions(m_Bob);
 		}
 
+		// Let Bob and Thomas jump on each others heads
+		if (m_Bob.getFeet().intersects(m_Thomas.getHead()))
+		{
+			m_Bob.stopFalling(m_Thomas.getHead().top);
+		}
+		else if (m_Thomas.getFeet().intersects(m_Bob.getHead()))
+		{
+			m_Thomas.stopFalling(m_Bob.getHead().top);
+		}
+
 		// Count down the amount of time the player has left
 		m_TimeRemaining -= dtAsSeconds;
 
