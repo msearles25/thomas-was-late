@@ -61,7 +61,7 @@ void PlayableCharacter::update(float elapsedTime)
 
 	// Head
 	m_Head.left = r.left;
-	m_Head.top = r.top + (r.height * 3);
+	m_Head.top = r.top + (r.height * .3);
 	m_Head.width = r.width;
 	m_Head.height = 1;
 
@@ -69,13 +69,13 @@ void PlayableCharacter::update(float elapsedTime)
 	m_Right.left = r.left + r.width - 2;
 	m_Right.top = r.top + r.height * .35;
 	m_Right.width = 1;
-	m_Right.height = r.height * 3;
+	m_Right.height = r.height * .3;
 
 	// Left
 	m_Left.left = r.left;
 	m_Left.top = r.top + r.height * .5;
 	m_Left.width = 1;
-	m_Left.height = r.height * 3;
+	m_Left.height = r.height * .3;
 
 	// Move the sprite into the appropriate position
 	m_Sprite.setPosition(m_Position);
