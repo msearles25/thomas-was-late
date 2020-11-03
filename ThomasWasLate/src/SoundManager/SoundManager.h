@@ -12,7 +12,7 @@ private:
 	sf::SoundBuffer m_ReachGoalBuffer;
 
 	// The sounds
-	sf::Sound m_FireSound;
+	sf::Sound m_Fire1Sound;
 	sf::Sound m_Fire2Sound;
 	sf::Sound m_Fire3Sound;
 	sf::Sound m_FallInFireSound;
