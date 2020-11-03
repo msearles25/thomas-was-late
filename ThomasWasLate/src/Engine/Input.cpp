@@ -37,11 +37,11 @@ void Engine::input()
 	// Handle inputs specific to Thomas
 	if (m_Thomas.handleInput())
 	{
-		// We'll play a sound here
+		m_SM.playJump();
 	}
 	// Handle Inputs specific to Bob
 	if (m_Bob.handleInput())
 	{
-		// Again, we'll play a sound here
+		m_SM.playJump();
 	}
 }
