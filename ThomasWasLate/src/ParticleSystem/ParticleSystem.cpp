@@ -60,3 +60,8 @@ void ParticleSystem::draw(sf::RenderTarget& target, sf::RenderStates states) con
 {
 	target.draw(m_Vertices, states);
 }
+
+bool ParticleSystem::running()
+{
+	return m_IsRunning;
+}
