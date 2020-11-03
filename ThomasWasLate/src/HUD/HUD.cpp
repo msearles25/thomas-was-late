@@ -38,3 +38,28 @@ HUD::HUD()
 	m_LevelText.setPosition(25, 0);
 	m_LevelText.setString("1");
 }
+
+sf::Text HUD::getMessage()
+{
+	return m_StartText;
+}
+
+sf::Text HUD::getLevel()
+{
+	return m_LevelText;
+}
+
+sf::Text HUD::getTime()
+{
+	return m_TimeText;
+}
+
+void HUD::setLevel(sf::String text)
+{
+	m_LevelText.setString(text);
+}
+
+void HUD::setTime(sf::String text)
+{
+	m_TimeText.setString(text);
+}
