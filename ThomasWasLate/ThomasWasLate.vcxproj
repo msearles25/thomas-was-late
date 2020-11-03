@@ -148,6 +148,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Engine\PopulateEmitters.cpp" />
+    <ClCompile Include="src\SoundManager\SoundManager.cpp" />
     <ClCompile Include="src\Engine\DetectCollisions.cpp" />
     <ClCompile Include="src\Engine\LoadLevel.cpp" />
     <ClCompile Include="src\LevelManager\LevelManager.cpp" />
@@ -162,6 +164,7 @@
     <ClCompile Include="src\Characters\Thomas\Thomas.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\SoundManager\SoundManager.h" />
     <ClInclude Include="src\LevelManager\LevelManager.h" />
     <ClInclude Include="src\Characters\Bob\Bob.h" />
     <ClInclude Include="src\PlayableCharacter\PlayableCharacter.h" />
