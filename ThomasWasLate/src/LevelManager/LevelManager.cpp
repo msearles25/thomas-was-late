@@ -102,13 +102,24 @@ int **LevelManager::nextLevel(sf::VertexArray &rVaLevel)
 
 	for (int x{ 0 }; x < m_LevelSize.x; x++)
 	{
-		for (int y{ 0 }; y < m_LevelSize.y; i++)
+		for (int y{ 0 }; y < m_LevelSize.y; y++)
 		{
 			// Position each vertex in the current quad
 			rVaLevel[currentVertex + 0].position = sf::Vector2f(x * TILE_SIZE, y * TILE_SIZE);
 			rVaLevel[currentVertex + 1].position = sf::Vector2f((x * TILE_SIZE) + TILE_SIZE, y * TILE_SIZE);
 			rVaLevel[currentVertex + 2].position = sf::Vector2f((x * TILE_SIZE), (y * TILE_SIZE) + TILE_SIZE);
 			rVaLevel[currentVertex + 3].position = sf::Vector2f(x * TILE_SIZE, (y * TILE_SIZE) + TILE_SIZE);
+
+			// Which tile from the sprite sheet are we using?
+			int  verticalOffset = arrayLevel[y][x] * TILE_SIZE;
+
+			rVaLevel[currentVertex + 0].texCoords = sf::Vector2f(0, 0 + verticalOffset);
+			rVaLevel[currentVertex + 1].texCoords = sf::Vector2f(TILE_SIZE, 0 + verticalOffset);
+			rVaLevel[currentVertex + 2].texCoords = sf::Vector2f(TILE_SIZE, TILE_SIZE + verticalOffset);
+			rVaLevel[currentVertex + 3].texCoords = sf::Vector2f(0, TILE_SIZE + verticalOffset);
+
+			// Position ready for the next four verticies
+			currentVertex = currentVertex + VERTS_IN_QUAD;
 		}
 	}
 }
