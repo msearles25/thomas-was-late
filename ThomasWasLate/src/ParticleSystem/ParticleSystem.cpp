@@ -20,3 +20,24 @@ void ParticleSystem::init(int numParticles)
 		m_Particles.push_back(Particle(direction));
 	}
 }
+
+void ParticleSystem::update(float dt)
+{
+	m_Duration -= dt;
+	std::vector<Particle>::iterator it;
+	int currentVertex{ 0 };
+
+	for (it = m_Particles.begin(); it < m_Particles.end(); it++)
+	{
+		// Move the particle
+		(*it).update(dt);
+
+		// Update the vertex array
+		m_Vertices[currentVertex++].position = it->getPosition();
+	}
+
+	if (m_Duration < 0)
+	{
+		m_IsRunning = false;
+	}
+}
