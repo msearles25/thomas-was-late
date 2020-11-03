@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "../Characters/Bob/Bob.h"
 #include "../LevelManager/LevelManager.h"
+#include "../SoundManager/SoundManager.h"
 #include "../TextureHolder/TextureHolder.h"
 #include "../Characters/Thomas/Thomas.h"
 
@@ -17,6 +18,9 @@ private:
 
 	// Our levelManager to manage all of are levels
 	LevelManager m_LM;
+
+	// Create a SoundManager
+	SoundManager m_SM;
 
 	const int TILE_SIZE{ 50 };
 	const int VERTS_IN_QUAD{ 4 };
