@@ -125,3 +125,23 @@ int **LevelManager::nextLevel(sf::VertexArray &rVaLevel)
 
 	return arrayLevel;
 }
+
+sf::Vector2i LevelManager::getLevelSize()
+{
+	return m_LevelSize;
+}
+
+int LevelManager::getCurrentLevel()
+{
+	return m_CurrentLevel;
+}
+
+float LevelManager::getTImeLimit()
+{
+	return m_BaseTimeLimit * m_TimeModifier;
+}
+
+sf::Vector2f LevelManager::getStartPosition()
+{
+	return m_StartPosition;
+}
