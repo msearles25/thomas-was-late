@@ -55,3 +55,8 @@ void ParticleSystem::emitParticles(sf::Vector2f startPosition)
 		it->setPosition(startPosition);
 	}
 }
+
+void ParticleSystem::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+	target.draw(m_Vertices, states);
+}
