@@ -59,6 +59,9 @@ private:
 	sf::Sprite m_BackgroundSprite;
 	sf::Texture m_BackgroundTexture;
 
+	// Declare a shader for the background
+	sf::Shader m_RippleShader;
+
 	// is the game currently playing?
 	bool m_Playing{ false };
 

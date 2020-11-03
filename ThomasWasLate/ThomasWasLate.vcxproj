@@ -148,6 +148,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\ParticleSystem\ParticleSystem.cpp" />
+    <ClCompile Include="src\Particle\Particle.cpp" />
     <ClCompile Include="src\HUD\HUD.cpp" />
     <ClCompile Include="src\Engine\PopulateEmitters.cpp" />
     <ClCompile Include="src\SoundManager\SoundManager.cpp" />
@@ -165,6 +167,8 @@
     <ClCompile Include="src\Characters\Thomas\Thomas.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ParticleSystem\ParticleSystem.h" />
+    <ClInclude Include="src\Particle\Particle.h" />
     <ClInclude Include="src\HUD\HUD.h" />
     <ClInclude Include="src\SoundManager\SoundManager.h" />
     <ClInclude Include="src\LevelManager\LevelManager.h" />

@@ -21,6 +21,18 @@ Engine::Engine()
 	m_BGLeftView.setViewport(sf::FloatRect(0.001f, 0.001f, 0.498f, 0.998f));
 	m_BGRightView.setViewport(sf::FloatRect(0.5f, 0.001f, 0.499f, 0.998f));
 
+	// Can this GPU handle/use the shader?
+	if (!sf::Shader::isAvailable())
+	{
+		// Can't, so we close the game
+		m_Window.close();
+	}
+	else
+	{
+		// Load two shaders (1 vertex and 1 fragment)
+		m_RippleShader.loadFromFile("Content/shaders/vertShader.vert", "Content/shaders/rippleShader.frag");
+	}
+
 	m_BackgroundTexture = TextureHolder::GetTexture("Content/graphics/background.png");
 
 	// Associate our texture with the sprite
