@@ -97,5 +97,7 @@ bool Engine::detectCollisions(PlayableCharacter& character)
 		}
 	}
 
-
+	return reachedGoal;
 }
+
+// Still need to fix collision issues, keeps setting position wrong

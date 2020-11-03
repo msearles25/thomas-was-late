@@ -16,6 +16,20 @@ void Engine::update(float dtAsSeconds)
 		// Update Bob each frame
 		m_Bob.update(dtAsSeconds);
 		
+		// Detect collisions and see if the characters have reached the 
+		// goal tile. 
+		if (detectCollisions(m_Thomas) && detectCollisions(m_Bob))
+		{
+			// New level is required, both reached the end
+			m_NewLevelRequired = true;
+			
+		}
+		else
+		{
+			// Run bobs collision detection 
+			detectCollisions(m_Bob);
+		}
+
 		// Count down the amount of time the player has left
 		m_TimeRemaining -= dtAsSeconds;
 
