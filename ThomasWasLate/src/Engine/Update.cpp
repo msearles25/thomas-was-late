@@ -115,4 +115,10 @@ void Engine::update(float dtAsSeconds)
 
 		m_FrameSinceLastHUDUpdate = 0;
 	}
+
+	// Updating the particle system
+	if (m_PS.running())
+	{
+		m_PS.update(dtAsSeconds);
+	}
 }
