@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "../Characters/Bob/Bob.h"
+#include "../LevelManager/LevelManager.h"
 #include "../TextureHolder/TextureHolder.h"
 #include "../Characters/Thomas/Thomas.h"
 
@@ -13,6 +14,9 @@ private:
 	// Thomas and bob
 	Thomas m_Thomas;
 	Bob m_Bob;
+
+	// Our levelManager to manage all of are levels
+	LevelManager m_LM;
 
 	const int TILE_SIZE{ 50 };
 	const int VERTS_IN_QUAD{ 4 };
@@ -56,10 +60,23 @@ private:
 	// Is it time for new/first level?
 	bool m_NewLevelRequired{ true };
 
+	// The vertex array for the level tiles
+	sf::VertexArray m_VALevel;
+
+	// The 2d array with the map of the level
+	// Pointer to a pointer
+	int **m_ArrayLevel{ nullptr };
+
+	// Texture for the level tiles
+	sf::Texture m_tilesTexture;
+
 	// Private functions for internal use only
 	void input();
 	void update(float dtAsSeconds);
 	void draw();
+
+	// Load a new level
+	void loadLevel();
 public:
 	// The engine constructor
 	Engine();
